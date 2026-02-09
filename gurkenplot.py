@@ -33,9 +33,6 @@ def main():
     dates, prices = parse_csv("./gurken.csv")
     std.default.plt_pretty("Datum", "Gurkenpreis / €")
     days = to_delta_t(dates)
-    print(days)
-    for d in days:
-        print(format_date(d, None))
     plt.scatter(days, prices)
     formatter = mpl.dates.DateFormatter('%d-%m-%Y')
     plt.gca().xaxis.set_major_formatter(formatter)
